@@ -1,0 +1,11 @@
+{
+    "name": "ludovicm67/superdate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ludovicm67",
+            "email": "ludovicmuller1@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,5 +1,6 @@
 {
     "name": "ludovicm67/superdate",
+    "description": "Nice methods to know if the specified date is on a weekend/weekday or holiday (for Alsace, France), and some other cool stuff",
     "license": "MIT",
     "authors": [
         {

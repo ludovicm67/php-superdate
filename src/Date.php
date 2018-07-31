@@ -2,7 +2,7 @@
 
 namespace ludovicm67\SuperDate;
 
-class SuperDate {
+class Date {
   private $date;
 
   public function __construct($date = null) {
@@ -11,15 +11,15 @@ class SuperDate {
 
   private function initDate($date) {
     if (is_null($date)) {
-      return new DateTime();
+      return new \DateTime();
     }
     if (is_string($date)) {
-      return new DateTime($date);
+      return new \DateTime($date);
     }
     if (is_object($date)) {
       return $date;
     }
-    return new DateTime();
+    return new \DateTime();
   }
 
   public function format() {
@@ -29,10 +29,10 @@ class SuperDate {
   public function allDaysTo($date) {
     $otherDate = $this->initDate($date);
 
-    $period = new DatePeriod(
-      new DateTime($this->format()),
-      new DateInterval('P1D'),
-      new DateTime($otherDate->format('Y-m-d') . ' 23:59:59')
+    $period = new \DatePeriod(
+      new \DateTime($this->format()),
+      new \DateInterval('P1D'),
+      new \DateTime($otherDate->format('Y-m-d') . ' 23:59:59')
     );
 
     $r = array_map(function ($d) {
@@ -57,17 +57,17 @@ class SuperDate {
     $formatted = $this->format();
 
     // easter
-    $base = new DateTime("$year-03-21");
+    $base = new \DateTime("$year-03-21");
     $days = easter_days($year);
-    $paques = $base->add(new DateInterval("P{$days}D"));
+    $paques = $base->add(new \DateInterval("P{$days}D"));
     $easter = $paques->format('Y-m-d');
 
     // days based on easter
-    $vendrediSaint = (new DateTime($easter))->sub(new DateInterval("P2D"));
-    $lundiPaques = (new DateTime($easter))->add(new DateInterval("P1D"));
-    $ascension = (new DateTime($easter))->add(new DateInterval("P39D"));
-    $pentecote = (new DateTime($easter))->add(new DateInterval("P49D"));
-    $lundiPentecote = (new DateTime($easter))->add(new DateInterval("P50D"));
+    $vendrediSaint = (new \DateTime($easter))->sub(new \DateInterval("P2D"));
+    $lundiPaques = (new \DateTime($easter))->add(new \DateInterval("P1D"));
+    $ascension = (new \DateTime($easter))->add(new \DateInterval("P39D"));
+    $pentecote = (new \DateTime($easter))->add(new \DateInterval("P49D"));
+    $lundiPentecote = (new \DateTime($easter))->add(new \DateInterval("P50D"));
 
     if ($paques->format('Y-m-d') == $formatted) {
       return true;

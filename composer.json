@@ -8,5 +8,10 @@
             "email": "ludovicmuller1@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "ludovicm67\\SuperDate\\": "src/"
+        }
+    },
     "require": {}
 }

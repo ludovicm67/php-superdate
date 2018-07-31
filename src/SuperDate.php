@@ -1,5 +1,7 @@
 <?php
 
+namespace ludovicm67\SuperDate;
+
 class SuperDate {
   private $date;
 

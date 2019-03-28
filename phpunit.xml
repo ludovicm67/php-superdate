@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit verbose="true" colors="true" bootstrap="./vendor/autoload.php">
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="display_errors" value="1" />
+        <ini name="xdebug.scream" value="0" />
+    </php>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <testsuites>
+        <testsuite name="Tests">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-html" target="./coverage" />
+        <log type="coverage-clover" target="./clover.xml" />
+    </logging>
+</phpunit>

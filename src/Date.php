@@ -7,7 +7,7 @@ class Date
     private $date;
 
     /**
-     * Date constructor, can take a Date
+     * Date constructor, can take a Date, DateTime, string or nothing
      */
     public function __construct($date = null)
     {
@@ -92,34 +92,20 @@ class Date
         $easter = $paques->format('Y-m-d');
 
         // days based on easter
-        $vendrediSaint = $paques->sub(new \DateInterval("P2D"));
-        $lundiPaques = $paques->add(new \DateInterval("P1D"));
-        $ascension = $paques->add(new \DateInterval("P39D"));
-        $pentecote = $paques->add(new \DateInterval("P49D"));
-        $lundiPentecote = $paques->add(new \DateInterval("P50D"));
+        $vendrediSaint = (clone $paques)->sub(new \DateInterval("P2D"));
+        $lundiPaques = (clone $paques)->add(new \DateInterval("P1D"));
+        $ascension = (clone $paques)->add(new \DateInterval("P39D"));
+        $pentecote = (clone $paques)->add(new \DateInterval("P49D"));
+        $lundiPentecote = (clone $paques)->add(new \DateInterval("P50D"));
 
-        if ($paques->format('Y-m-d') == $formatted) {
-            return true;
-        }
-
-        if ($vendrediSaint->format('Y-m-d') == $formatted) {
-            return true;
-        }
-
-        if ($lundiPaques->format('Y-m-d') == $formatted) {
-            return true;
-        }
-
-        if ($ascension->format('Y-m-d') == $formatted) {
-            return true;
-        }
-
-        if ($pentecote->format('Y-m-d') == $formatted) {
-            return true;
-        }
-
-        if ($lundiPentecote->format('Y-m-d') == $formatted) {
-            return true;
+        switch ($formatted) {
+            case $paques->format('Y-m-d'):
+            case $vendrediSaint->format('Y-m-d'):
+            case $lundiPaques->format('Y-m-d'):
+            case $ascension->format('Y-m-d'):
+            case $pentecote->format('Y-m-d'):
+            case $lundiPentecote->format('Y-m-d'):
+                return true;
         }
 
         // Nouvel an
@@ -127,13 +113,8 @@ class Date
             return true;
         }
 
-        // Fête du travail
-        if ($month == 5 && $day == 1) {
-            return true;
-        }
-
-        // Victoire des alliés
-        if ($month == 5 && $day == 8) {
+        // Fête du travail | Victoire des alliés
+        if ($month == 5 && ($day == 1 || $day == 8)) {
             return true;
         }
 
@@ -147,23 +128,13 @@ class Date
             return true;
         }
 
-        // Toussaint
-        if ($month == 11 && $day == 1) {
+        // Toussaint | Armistice
+        if ($month == 11 && ($day == 1 || $day == 11)) {
             return true;
         }
 
-        // Armistice
-        if ($month == 11 && $day == 11) {
-            return true;
-        }
-
-        // Noël
-        if ($month == 12 && $day == 25) {
-            return true;
-        }
-
-        // Saint-Etienne
-        if ($month == 12 && $day == 26) {
+        // Noël | Saint-Etienne
+        if ($month == 12 && ($day == 25 || $day == 26)) {
             return true;
         }
 

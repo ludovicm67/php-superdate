@@ -17,7 +17,7 @@ class Date
     /**
      * Initialize the internal DateTime using user input
      */
-    private function initDate($date)
+    private function initDate($date): Object
     {
         if (is_string($date)) {
             return new \DateTime($date);
@@ -33,7 +33,7 @@ class Date
     /**
      * Format date in the year-month-day form
      */
-    public function format()
+    public function format(): string
     {
         return $this->date->format('Y-m-d');
     }
@@ -41,7 +41,7 @@ class Date
     /**
      * Return an array containing all days up to the date passed in argument
      */
-    public function allDaysTo($date)
+    public function allDaysTo($date): array
     {
         $otherDate = $this->initDate($date);
 

@@ -85,6 +85,15 @@ final class DateTest extends TestCase
         $lundiPaques = new Date("2019-04-22");
         $ascension = new Date("2019-05-30");
         $pentecote = new Date("2019-06-09");
+        $lundiPentecote = new Date("2019-06-10");
+        $feteTravail = new Date("2019-05-01");
+        $victoireAllies = new Date("2019-05-08");
+        $feteNationale = new Date("2019-07-14");
+        $assomption = new Date("2019-08-15");
+        $toussaint = new Date("2019-11-01");
+        $armistice = new Date("2019-11-11");
+        $noel = new Date("2019-12-25");
+        $stEtienne = new Date("2019-12-26");
 
         $this->assertFalse($date->isHoliday());
         $this->assertTrue($newYear->isHoliday());
@@ -93,5 +102,14 @@ final class DateTest extends TestCase
         $this->assertTrue($lundiPaques->isHoliday());
         $this->assertTrue($ascension->isHoliday());
         $this->assertTrue($pentecote->isHoliday());
+        $this->assertTrue($lundiPentecote->isHoliday());
+        $this->assertTrue($feteTravail->isHoliday());
+        $this->assertTrue($victoireAllies->isHoliday());
+        $this->assertTrue($feteNationale->isHoliday());
+        $this->assertTrue($assomption->isHoliday());
+        $this->assertTrue($toussaint->isHoliday());
+        $this->assertTrue($armistice->isHoliday());
+        $this->assertTrue($noel->isHoliday());
+        $this->assertTrue($stEtienne->isHoliday());
     }
 }

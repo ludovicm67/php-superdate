@@ -4,7 +4,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ludovicm67/superdate/v/stable)](https://packagist.org/packages/ludovicm67/superdate)
 [![Total Downloads](https://poser.pugx.org/ludovicm67/superdate/downloads)](https://packagist.org/packages/ludovicm67/superdate)
-[![Build Status](https://travis-ci.org/ludovicm67/php-superdate.svg?branch=master)](https://travis-ci.org/ludovicm67/php-superdate)
 [![Coverage Status](https://coveralls.io/repos/github/ludovicm67/php-superdate/badge.svg?branch=master)](https://coveralls.io/github/ludovicm67/php-superdate?branch=master)
 [![License](https://poser.pugx.org/ludovicm67/superdate/license)](https://packagist.org/packages/ludovicm67/superdate)
 

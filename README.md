@@ -1,5 +1,4 @@
-Superdate
-=========
+# Superdate
 
 > Some useful functions for working with dates
 
@@ -30,7 +29,7 @@ use ludovicm67\SuperDate\Date;
 // your code below...
 ```
 
-### create a Date object
+### Create a Date object
 
 Many ways to initialize the object.
 
@@ -45,7 +44,7 @@ $date = new Date(null);
 $date = new Date("2019-03-21");
 ```
 
-### all days to an other date
+### All days from one date to an other date
 
 Get an array of all days from the current date to an other one.
 
@@ -59,14 +58,14 @@ $allDaysTo = $date->allDaysTo("2019-04-03");
 // between 2019-03-21 and 2019-04-03 included
 ```
 
-### is a week day or a weekend day?
+### Is it a week day or a weekend day?
 
 ```php
 $date->isWeekDay(); // true if between monday and friday, false if saturday or sunday
 $date->isWeekEnd(); // false if between monday and friday, true if saturday or sunday
 ```
 
-### is it a holiday day?
+### Is it a holiday day?
 
 Based on Alsace, France holidays.
 

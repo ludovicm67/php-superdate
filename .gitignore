@@ -1,4 +1,4 @@
 /vendor/
-.phpunit*
+/coverage/
 clover.xml
-coverage/
+.phpunit*
